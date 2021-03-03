@@ -22,8 +22,8 @@ int	ft_printf(const char *str, ...)
 				ft_putstr_fd(ft_uitoa(va_arg(v_list, int)), 1);
 			if (str[i] == '%')
 				ft_putchar_fd('%', 1);
-			if (str[i] == 'p')
-				ft_putstr_fd(&va_arg(v_list, char *), 1);
+			//if (str[i] == 'p')
+			//	ft_putstr_fd(va_arg(v_list, char *), 1);
 		}
 		else
 			ft_putchar_fd(str[i], 1);

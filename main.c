@@ -9,7 +9,7 @@ int main(void)
 	unsigned int c = 1231982735;
 	void *ptr;
 
-	ft_printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%p\n%%\n", a, str, b, c, ptr);
-	printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%p\n%%\n", a, str, b, c, ptr);
+	ft_printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%%\n", a, str, b, c);
+	printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%%\n", a, str, b, c);
 	return (0);
 }

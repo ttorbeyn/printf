@@ -6,11 +6,10 @@
 /*   By: ttorbeyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 18:45:58 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/02 12:36:01 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/02 12:36:06 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft/libft.h"
 #include "printf.h"
 
 void	ft_putchar_fd(char c, int fd)

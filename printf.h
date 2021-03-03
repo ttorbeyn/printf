@@ -4,6 +4,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 int		ft_printf(const char *str, ...);
 void	ft_putchar_fd(char c, int fd);
