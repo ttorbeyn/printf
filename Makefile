@@ -14,9 +14,11 @@ NAME		= libftprintf.a
 
 SRCS    	= 	ft_printf.c\
 				ft_printf_utils.c\
-				ft_uitoa.c\
-				ft_itoa.c\
-				ft_printf_p.c
+				ft_printf_p.c\
+				ft_printf_s.c\
+				utils/ft_uitoa.c\
+                utils/ft_itoa.c\
+                utils/ft_atoi.c
 
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra

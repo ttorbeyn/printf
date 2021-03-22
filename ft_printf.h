@@ -10,8 +10,8 @@ typedef struct	s_flags
 {
 	int minus;
 	int zero;
-	int width;
 	int precision;
+	int width;
 	int point;
 }				t_flags;
 
@@ -20,10 +20,13 @@ int		ft_printf(const char *str, ...);
 void	ft_putchar(char c);
 void	ft_putstr(char *s);
 size_t	ft_strlen(const char *s);
+int		ft_isdigit(int c);
 
 char	*ft_uitoa(unsigned int n);
 char	*ft_itoa(int n);
+int		ft_atoi(const char *str);
 
+void	ft_printf_s(char *str, t_flags *flags);
 void	ft_printf_p(unsigned long nbr);
 
 #endif //PRINTF_FT_PRINTF_H

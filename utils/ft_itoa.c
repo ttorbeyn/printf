@@ -6,17 +6,17 @@
 /*   By: ttorbeyn <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/12 18:43:17 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/02 16:17:27 by hubert           ###   ########.fr       */
+/*   Updated: 2021/01/18 11:10:54 by ttorbeyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 static char	*ft_revstr(char *str)
 {
-	char			swp;
-	unsigned int	i;
-	unsigned int	len;
+	char	swp;
+	int		i;
+	int		len;
 
 	i = 0;
 	len = ft_strlen(str) - 1;
@@ -31,7 +31,7 @@ static char	*ft_revstr(char *str)
 	return (str);
 }
 
-static int	ft_countdigit(unsigned int x)
+static int	ft_countdigit(int x)
 {
 	size_t	c;
 
@@ -46,9 +46,9 @@ static int	ft_countdigit(unsigned int x)
 	return (c);
 }
 
-static int	ft_isnegative(unsigned int n)
+static int	ft_isnegative(int n)
 {
-	unsigned int sign;
+	int sign;
 
 	sign = 1;
 	if (n < 0)
@@ -56,11 +56,11 @@ static int	ft_isnegative(unsigned int n)
 	return (sign);
 }
 
-char		*ft_uitoa(unsigned int n)
+char		*ft_itoa(int n)
 {
 	char			*new;
-	unsigned int	i;
-	unsigned int	c;
+	int				i;
+	int				c;
 	unsigned int	n2;
 
 	c = ft_countdigit(n);
