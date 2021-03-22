@@ -6,6 +6,15 @@
 # include <stdarg.h>
 # include <stdio.h>
 
+typedef struct	s_flags
+{
+	int minus;
+	int zero;
+	int width;
+	int precision;
+	int point;
+}				t_flags;
+
 int		ft_printf(const char *str, ...);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
