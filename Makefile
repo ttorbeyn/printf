@@ -12,17 +12,15 @@
 
 NAME		= libftprintf.a
 
-SRCS    	= 	printf.c\
-				ft_putchar_fd.c\
-				ft_putstr_fd.c\
+SRCS    	= 	ft_printf.c\
+				ft_printf_utils.c\
 				ft_uitoa.c\
-				ft_strlen.c\
-				ft_itoa.c
+				ft_itoa.c\
+				ft_printf_p.c
 
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
 OBJS		= $(SRCS:.c=.o)
-OBJS_BONUS	= $(BONUS:.c=.o)
 RM			= rm -f
 LIBC		= ar rc
 
@@ -35,11 +33,11 @@ $(NAME):	$(OBJS)
 			$(LIBC) $(NAME) $(OBJS)
 
 clean:
-			$(RM) $(OBJS) $(OBJS_BONUS)
+			$(RM) $(OBJS)
 
 fclean:		clean
 			$(RM) $(NAME)
 
 re:			fclean all
 
-.PHONY: all, clean, fclean, re, bonus
+.PHONY: all, clean, fclean, re

@@ -1,4 +1,4 @@
-#include "printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 
 int main(void)
@@ -8,8 +8,12 @@ int main(void)
 	int b = -3721;
 	unsigned int c = 1231982735;
 	void *ptr;
+	unsigned long x = str;
 
-	ft_printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%%\n", a, str, b, c);
-	printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%%\n", a, str, b, c);
+	//ft_printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%%\n%*\n", a, str, b, c, 10);
+	//printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%%\n%p\n", a, str, b, c, str);
+	ft_printf("%p\n", x);
+	printf("%p\n", x);
+
 	return (0);
 }
