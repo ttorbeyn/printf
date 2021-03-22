@@ -57,9 +57,9 @@ int		ft_check_specifiers(int i, const char *str, t_flags *flags, va_list v_list)
 	if (str[i] == 'p')
 		ft_printf_p(va_arg(v_list, unsigned long), flags);
 	if (str[i] == 'x')
-		ft_printf_p(va_arg(v_list, unsigned long), flags);
+		ft_printf_x(va_arg(v_list, unsigned long), flags);
 	if (str[i] == 'X')
-		ft_printf_p(va_arg(v_list, unsigned long), flags);
+		ft_printf_xx(va_arg(v_list, unsigned long), flags);
 	if (str[i] == '%')
 		ft_putchar('%');
 	return (i);

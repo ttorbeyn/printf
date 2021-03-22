@@ -6,20 +6,22 @@
 #    By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 11:56:18 by ttorbeyn          #+#    #+#              #
-#    Updated: 2021/03/02 16:20:50 by hubert           ###   ########.fr        #
+#    Updated: 2021/03/22 23:21:14 by hubert           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= libftprintf.a
 
 SRCS    	= 	ft_printf.c\
-				ft_printf_utils.c\
+				ft_printf_d.c\
 				ft_printf_p.c\
 				ft_printf_s.c\
-				ft_printf_d.c\
-				utils/ft_uitoa.c\
-                utils/ft_itoa.c\
-                utils/ft_atoi.c
+				ft_printf_x.c\
+				ft_printf_xx.c\
+				ft_printf_utils.c\
+				utils/ft_atoi.c\
+				utils/ft_itoa.c\
+				utils/ft_uitoa.c
 
 CC			= gcc
 CFLAGS		= -Wall -Werror -Wextra
@@ -43,4 +45,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus
