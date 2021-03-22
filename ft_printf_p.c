@@ -1,5 +1,19 @@
 #include "ft_printf.h"
 
+int		count_hexa_len(unsigned long nbr)
+{
+	int		i;
+
+	i = 2;
+	while (nbr >= 16)
+	{
+		nbr = nbr / 16;
+		i++;
+	}
+	i++;
+	return (i);
+}
+
 void	ft_print_address(unsigned long nbr)
 {
 	char *base;
@@ -14,9 +28,36 @@ void	ft_print_address(unsigned long nbr)
 		ft_putchar((base[nbr]));
 }
 
-void	ft_printf_p(unsigned long nbr)
+void	ft_printf_p(unsigned long nbr, t_flags *flags)
 {
-	ft_putstr("0x");
-	ft_print_address(nbr);
+	if (flags->precision > count_hexa_len(nbr))
+	{
+		while (flags->precision > count_hexa_len(nbr))
+		{
+			ft_putchar('0');
+			flags->precision--;
+		}
+	}
+	if (flags->width)
+	{
+		if (flags->minus)
+		{
+			ft_putstr("0x");
+			ft_print_address(nbr);
+		}
+		while (flags->width > count_hexa_len(nbr))
+		{
+			if (flags->zero)
+				ft_putchar('0');
+			else
+				ft_putchar(' ');
+			flags->width--;
+		}
+	}
+	if (flags->minus == 0)
+	{
+		ft_putstr("0x");
+		ft_print_address(nbr);
+	}
 	return ;
 }

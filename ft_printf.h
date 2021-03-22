@@ -27,6 +27,7 @@ char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
 
 void	ft_printf_s(char *str, t_flags *flags);
-void	ft_printf_p(unsigned long nbr);
+void	ft_printf_d(char *str, t_flags *flags);
+void	ft_printf_p(unsigned long nbr, t_flags *flags);
 
 #endif //PRINTF_FT_PRINTF_H

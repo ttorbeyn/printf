@@ -16,6 +16,7 @@ SRCS    	= 	ft_printf.c\
 				ft_printf_utils.c\
 				ft_printf_p.c\
 				ft_printf_s.c\
+				ft_printf_d.c\
 				utils/ft_uitoa.c\
                 utils/ft_itoa.c\
                 utils/ft_atoi.c

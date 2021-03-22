@@ -44,6 +44,27 @@ int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
 	return (i);
 }
 
+int		ft_check_specifiers(int i, const char *str, t_flags *flags, va_list v_list)
+{
+	if (str[i] == 'c')
+		ft_putchar(va_arg(v_list, int));
+	if (str[i] == 's')
+		ft_printf_s(va_arg(v_list, char *), flags);
+	if (str[i] == 'd' || str[i] == 'i')
+		ft_printf_d(ft_itoa(va_arg(v_list, int)), flags);
+	if (str[i] == 'u')
+		ft_putstr(ft_uitoa(va_arg(v_list, int)));
+	if (str[i] == 'p')
+		ft_printf_p(va_arg(v_list, unsigned long), flags);
+	if (str[i] == 'x')
+		ft_printf_p(va_arg(v_list, unsigned long), flags);
+	if (str[i] == 'X')
+		ft_printf_p(va_arg(v_list, unsigned long), flags);
+	if (str[i] == '%')
+		ft_putchar('%');
+	return (i);
+}
+
 int		ft_printf(const char *str, ...)
 {
 	int	i;
@@ -60,18 +81,7 @@ int		ft_printf(const char *str, ...)
 		{
 			i++;
 			i = (ft_check_flags(i, str, flags, v_list));
-			if (str[i] == 'c')
-				ft_putchar(va_arg(v_list, int));
-			if (str[i] == 's')
-				ft_printf_s(va_arg(v_list, char *), flags);
-			if (str[i] == 'd' || str[i] == 'i')
-				ft_putstr(ft_itoa(va_arg(v_list, int)));
-			if (str[i] == 'u')
-				ft_putstr(ft_uitoa(va_arg(v_list, int)));
-			if (str[i] == '%')
-				ft_putchar('%');
-			if (str[i] == 'p')
-				ft_printf_p(va_arg(v_list, unsigned long));
+			i = (ft_check_specifiers(i, str, flags, v_list));
 		}
 		else
 			ft_putchar(str[i]);

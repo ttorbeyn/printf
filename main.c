@@ -13,8 +13,8 @@ int main(void)
 	//ft_printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%%\n%*\n", a, str, b, c, 10);
 	//printf("%c\nHello\n%s\nWorld!\n%d\n%u\n%%\n%p\n", a, str, b, c, str);
 
-	ft_printf("%-*s\n", 10, str);
-	printf("%-*s\n", 10, str);
+	ft_printf("%020p\n", str);
+	printf("%020p\n", str);
 
 	return (0);
 }
