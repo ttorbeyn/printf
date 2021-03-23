@@ -14,18 +14,18 @@ static int		count_hexa_len(unsigned long nbr)
 	return (i);
 }
 
-static void	ft_print_address(unsigned long nbr)
+static void	ft_print_address(unsigned long nbr, t_flags *flags)
 {
 	char *base;
 
 	base = "0123456789ABCDEF";
 	if (nbr >= 16)
 	{
-		ft_print_address(nbr / 16);
-		ft_putchar(base[nbr % 16]);
+		ft_print_address(nbr / 16, flags);
+		ft_putchar(base[nbr % 16], flags);
 	}
 	else
-		ft_putchar((base[nbr]));
+		ft_putchar((base[nbr]), flags);
 }
 
 void	ft_printf_xx(unsigned long nbr, t_flags *flags)
@@ -34,7 +34,7 @@ void	ft_printf_xx(unsigned long nbr, t_flags *flags)
 	{
 		while (flags->precision > (count_hexa_len(nbr) - 2))
 		{
-			ft_putchar('0');
+			ft_putchar('0', flags);
 			flags->precision--;
 		}
 	}
@@ -43,18 +43,18 @@ void	ft_printf_xx(unsigned long nbr, t_flags *flags)
 		if (flags->minus)
 		{
 
-			ft_print_address(nbr);
+			ft_print_address(nbr, flags);
 		}
 		while (flags->width > count_hexa_len(nbr))
 		{
 			if (flags->zero)
-				ft_putchar('0');
+				ft_putchar('0', flags);
 			else
-				ft_putchar(' ');
+				ft_putchar(' ', flags);
 			flags->width--;
 		}
 	}
 	if (flags->minus == 0)
-		ft_print_address(nbr);
+		ft_print_address(nbr, flags);
 	return ;
 }

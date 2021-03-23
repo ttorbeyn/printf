@@ -13,6 +13,7 @@
 NAME		= libftprintf.a
 
 SRCS    	= 	ft_printf.c\
+				ft_printf_c.c\
 				ft_printf_d.c\
 				ft_printf_p.c\
 				ft_printf_s.c\
@@ -45,4 +46,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all, clean, fclean, re, bonus
+.PHONY: all, clean, fclean, re

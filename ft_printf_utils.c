@@ -1,11 +1,12 @@
 #include "ft_printf.h"
 
-void	ft_putchar(char c)
+void	ft_putchar(char c, t_flags *flags)
 {
 	write(1, &c, 1);
+	flags->count = flags->count + 1;
 }
 
-void	ft_putstr(char *s)
+void	ft_putstr(char *s, t_flags *flags)
 {
 	size_t	i;
 
@@ -14,7 +15,7 @@ void	ft_putstr(char *s)
 		return ;
 	while (s[i])
 	{
-		ft_putchar(s[i]);
+		ft_putchar(s[i], flags);
 		i++;
 	}
 }
