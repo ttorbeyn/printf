@@ -5,35 +5,55 @@ void	ft_printf_d(char *str, t_flags *flags)
 	int i;
 	int p;
 	int w;
+	int len;
+	int len2;
 
 	i = 0;
 	p = flags->precision;
 	w = flags->width;
-//	printf("zero : %d\n", flags->zero);
+	len = ft_strlen(str);
+	len2 = ft_strlen(str);
+	if (ft_atoi(str) <= 0)
+		len--;
+	//printf("str : %d\n", ft_atoi(str));
+	//printf("point : %d\n", flags->point);
+	//printf("precision : %d\n", flags->precision);
+	if (ft_atoi(str) != 0 && !flags->precision)
+		flags->precision = 1;
 	if (!flags->minus)
 	{
-		while ((p > (int)ft_strlen(str)) || (flags->zero && w > (int)ft_strlen(str)))
-		{
-			ft_putchar('0', flags);
-			p--;
-			w--;
-		}
-		while (((w > (flags->precision)) && flags->point) || (!flags->zero && w > (int)ft_strlen(str)))
+		//printf("len : %d\n", len);
+		while (((w > (flags->precision)) && flags->point) || (!flags->zero && w > len2 && !flags->point))
 		{
 			ft_putchar(' ', flags);
 			w--;
 		}
-		ft_putstr(str, flags);
+		if (ft_atoi(str) < 0)
+			ft_putchar(str[i++], flags);
+		while ((p > len) || (flags->zero && w > len2))
+		{
+			ft_putchar('0', flags);
+			p--;
+			w--;
+		}
+		if (ft_atoi(str) == 0 && flags->point && !flags->precision)
+			return ;
+		else
+			ft_putstr(&str[i], flags);
 	}
 	else if (flags->minus)
 	{
-		while (p > (int)ft_strlen(str))
+		while (p > len)
 		{
 			ft_putchar('0', flags);
 			p--;
 		}
-		ft_putstr(str, flags);
-		while ((flags->width > (flags->precision) && (flags->point)) || flags->width > (int)ft_strlen(str))
+		if (!(ft_atoi(str) == 0 && flags->point && !flags->precision))
+			ft_putstr(str, flags);
+		//printf("len : %d\n", len);
+		//printf("width : %d\n", flags->width);
+		//printf("precision : %d\n", p);
+		while ((flags->width > flags->precision && flags->point && flags->width > len) || (flags->width > len2 && !flags->point))
 		{
 			ft_putchar(' ', flags);
 			flags->width--;
@@ -49,10 +69,10 @@ void	ft_printf_d(char *str, t_flags *flags)
 	i = 0;
 	if (flags->point && flags->precision == 1 && ft_atoi(str) == 0)
 		return ;
-	if (flags->precision > (int)ft_strlen(str))
+	if (flags->precision > len)
 	{
 		ft_putchar(str[i++], flags);
-		while (flags->precision >= (int)ft_strlen(str))
+		while (flags->precision >= len)
 		{
 			ft_putchar('0', flags);
 			flags->precision--;
@@ -62,7 +82,7 @@ void	ft_printf_d(char *str, t_flags *flags)
 	{
 		if (flags->minus)
 			ft_putstr(str, flags);
-		while (flags->width > (int)ft_strlen(str))
+		while (flags->width > len)
 		{
 			if (flags->zero != 0)
 				ft_putchar('0', flags);

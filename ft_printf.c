@@ -5,7 +5,7 @@ void	reset_flags(t_flags *flags)
 	flags->minus = 0;
 	flags->zero = 0;
 	flags->point = 0;
-	flags->precision = 1;
+	flags->precision = 0;
 	flags->width = 0;
 }
 
@@ -23,29 +23,51 @@ int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
 		{
 			flags->zero = 1;
 			i++;
-			flags->width = ft_atoi(&str[i]);
-			while (ft_isdigit(str[i]))
-				i++;
+			if (ft_atoi(&str[i]) > 0)
+			{
+				flags->width = ft_atoi(&str[i]);
+				while (ft_isdigit(str[i]))
+					i++;
+			}
 		}
 		if (str[i] == '.')
 		{
 			flags->point = 1;
 			i++;
+			//printf("atoi : %d\n", ft_atoi(&str[i]));
 			if (ft_atoi(&str[i]) > 0)
 			{
 				flags->precision = ft_atoi(&str[i]);
 				while (ft_isdigit(str[i]))
 					i++;
-			} else if (str[i] == '*')
+			}
+			else if (str[i] == '*')
 			{
 				flags->precision = va_arg(v_list, int);
+				if (flags->precision < 0)
+				{
+					flags->point = 0;
+					flags->precision = 1;
+				}
 				i++;
-			} else
+			}
+			else if (ft_atoi(&str[i]) == 0)
+			{
+				flags->precision = 0;
+				while (ft_isdigit(str[i]))
+					i++;
+			}
+			else
 				flags->precision = 1;
 		}
 		if (str[i] == '*')
 		{
 			flags->width = va_arg(v_list, int);
+			if (flags->width < 0)
+			{
+				flags->width = -flags->width;
+				flags->minus = 1;
+			}
 			i++;
 		}
 		if (ft_isdigit(str[i]))

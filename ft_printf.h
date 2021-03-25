@@ -20,7 +20,7 @@ int		ft_printf(const char *str, ...);
 
 void	ft_putchar(char c, t_flags *flags);
 void	ft_putstr(char *s, t_flags *flags);
-size_t	ft_strlen(const char *s);
+int 	ft_strlen(const char *s);
 int		ft_isdigit(int c);
 
 char	*ft_uitoa(unsigned int n);

@@ -48,37 +48,47 @@ int x;
 	x = printf("%-0i, %-0d, %.30d, %-0d, %-0d, %-0d, %-0d, %-0d\n", i, j, k, l, m, c, e, d); //T15
 	printf("nbr : %d\n", x);
 */
-	int a = 12345;
-	//
-//	printf("or_:int		: 12345\n");
-//	ft_printf("ft_:int		: 12345\n");
+	int a = -2;
+	int b = 0;
+	int c = 123456789;
+	//char *str = "abcdef";
+	//printf("good	:	|%*.*d|\n", a, b, c);
+	//ft_printf("bad	:	|%*.*d|\n", a, b, c);
+	printf("or_:.1d	: |%.1d|\n", b);
+	ft_printf("ft_:.1d	: |%.1d|\n", b);
+	return (0);
+}
 
-//	printf("or_:.3d		: |%.3d|\n", a);
-//	ft_printf("ft_:.3d		: |%.3d|\n", a);
+/*
+	printf("or_:int		: 12345\n");
+	ft_printf("ft_:int		: 12345\n");
+
+	printf("or_:.3d		: |%.3d|\n", a);
+	ft_printf("ft_:.3d		: |%.3d|\n", a);
 	printf("or_:.30d	: |%.30d|\n", a);
 	ft_printf("ft_:.30d	: |%.30d|\n", a);
-//	printf("or_:3d		: |%3d|\n", a);
-//	ft_printf("ft_:3d		: |%3d|\n", a);
+	printf("or_:3d		: |%3d|\n", a);
+	ft_printf("ft_:3d		: |%3d|\n", a);
 	printf("or_:30d		: |%30d|\n", a);
 	ft_printf("ft_:30d		: |%30d|\n", a);
-//	printf("or_:.03d	: |%.03d|\n", a);
-//	ft_printf("ft_:.03d	: |%.03d|\n", a);
+	printf("or_:.03d	: |%.03d|\n", a);
+	ft_printf("ft_:.03d	: |%.03d|\n", a);
 	printf("or_:.030d	: |%.030d|\n", a);
 	ft_printf("ft_:.030d	: |%.030d|\n", a);
-//	printf("or_:03d		: |%03d|\n", a);
-//	ft_printf("ft_:03d		: |%03d|\n", a);
+	printf("or_:03d		: |%03d|\n", a);
+	ft_printf("ft_:03d		: |%03d|\n", a);
 	printf("or_:030d	: |%030d|\n", a);
 	ft_printf("ft_:030d	: |%030d|\n", a);
-//	printf("or_:-03d	: |%-03d|\n", a);
-//	ft_printf("ft_:-03d	: |%-03d|\n", a);
+	printf("or_:-03d	: |%-03d|\n", a);
+	ft_printf("ft_:-03d	: |%-03d|\n", a);
 	printf("or_:-030d	: |%-030d|\n", a);
 	ft_printf("ft_:-030d	: |%-030d|\n", a);
-//	printf("or_:-3d		: |%-3d|\n", a);
-//	ft_printf("ft_:-3d		: |%-3d|\n", a);
+	printf("or_:-3d		: |%-3d|\n", a);
+	ft_printf("ft_:-3d		: |%-3d|\n", a);
 	printf("or_:-30d	: |%-30d|\n", a);
 	ft_printf("ft_:-30d	: |%-30d|\n", a);
-//	printf("or_:-.3d	: |%-.3d|\n", a);
-//	ft_printf("ft_:-.3d	: |%-.3d|\n", a);
+	printf("or_:-.3d	: |%-.3d|\n", a);
+	ft_printf("ft_:-.3d	: |%-.3d|\n", a);
 	printf("or_:-.30d	: |%-.30d|\n", a);
 	ft_printf("ft_:-.30d	: |%-.30d|\n", a);
 	printf("or_:-.*d	: |%-.*d|\n", 30, a);
@@ -93,5 +103,12 @@ int x;
 	ft_printf("ft_:.10-30d	: |%.10-30d|\n", a);
 	printf("or_:-10.10d	: |%-10.10d|\n", a);
 	ft_printf("ft_:-10.10d	: |%-10.10d|\n", a);
-	return (0);
-}
+ 	printf("or_:.0d		: |%.0d|\n", a);
+	ft_printf("ft_:.0d		: |%.0d|\n", a);
+	printf("or_:0.d		: |%0.d|\n", a);
+	ft_printf("ft_:0.d		: |%0.d|\n", a);
+	printf("or_:1.d		: |%1.d|\n", a);
+	ft_printf("ft_:1.d		: |%1.d|\n", a);
+	printf("or_:-1.0d	: |%-1.0d|\n", b);
+	ft_printf("ft_:-1.0d	: |%-1.0d|\n", b);
+ */
