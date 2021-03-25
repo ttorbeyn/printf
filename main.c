@@ -47,16 +47,42 @@ int x;
 	printf("nbr : %d\n", x);
 	x = printf("%-0i, %-0d, %.30d, %-0d, %-0d, %-0d, %-0d, %-0d\n", i, j, k, l, m, c, e, d); //T15
 	printf("nbr : %d\n", x);
-*/
-	int a = -2;
+
+	int a = -12345;
 	int b = 0;
-	int c = 123456789;
-	//char *str = "abcdef";
-	//printf("good	:	|%*.*d|\n", a, b, c);
-	//ft_printf("bad	:	|%*.*d|\n", a, b, c);
-	printf("or_:.1d	: |%.1d|\n", b);
-	ft_printf("ft_:.1d	: |%.1d|\n", b);
-	return (0);
+	int c = -12;
+	ft_printf("int	: 12345\n");
+	ft_printf(".3d	: |%.3d|\n", a);
+	ft_printf(".30d	: |%.30d|\n", a);
+	ft_printf("3d	: |%3d|\n", a);
+	ft_printf("30d	: |%30d|\n", a);
+	ft_printf(".03d	: |%.03d|\n", a);
+	ft_printf(".030d	: |%.030d|\n", a);
+	ft_printf("03d	: |%03d|\n", a);
+	ft_printf("030d	: |%030d|\n", a);
+	ft_printf("3d	: |%3d|\n", a);
+	ft_printf("30d	: |%30d|\n", a);
+	ft_printf(".3d	: |%.3d|\n", a);
+	ft_printf(".30d	: |%.30d|\n", a);
+	ft_printf(".*d	: |%.*d|\n", 30, a);
+	ft_printf("*.*d	: |%*.*d|\n", 4, 3, c);
+	ft_printf("4.3d	: |%4.3d|\n", c);
+	ft_printf("30.10d	: |%30.10d|\n", a);
+	ft_printf("11.10d	: |%11.10d|\n", a);
+	ft_printf("12.10d	: |%12.10d|\n", a);
+	ft_printf("10.10d	: |%10.10d|\n", a);
+	ft_printf(".1d	: |%.1d|\n", b);
+	ft_printf("0.0d	: |%0.0d|\n", b);
+	ft_printf("10.0d	: |%10.0d|\n", b);
+	ft_printf(".0d	: |%.0d|\n", b);
+	ft_printf(".1d	: |%.1d|\n", b);
+	ft_printf("4d	: |%4d|\n", c);
+	ft_printf("0*d	: |%0*d|\n", 4, c);
+	ft_printf("030.10d	: |%030.10d|\n", a);*/
+	int a = 0;
+	printf("good:-1.0d\t: |%-1.0d|\n", a);
+	ft_printf("baad:-1.0d\t: |%-1.0d|\n", a);
+
 }
 
 /*
