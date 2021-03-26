@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_x.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 19:12:16 by ttorbeyn          #+#    #+#             */
+/*   Updated: 2021/03/26 19:12:18 by ttorbeyn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 static int	count_hexa_len(unsigned int nbr)
@@ -23,13 +35,8 @@ static void	ft_print_hexa(unsigned int nbr, t_flags *flags)
 	else
 		base = "0123456789abcdef";
 	if (nbr > 15)
-	{
 		ft_print_hexa(nbr / 16, flags);
-
-	}
 	ft_putchar(base[nbr % 16], flags);
-	//else
-	//	ft_putchar((base[nbr]), flags);
 }
 
 void	ft_printf_x_no_minus(unsigned int nbr, t_flags *flags, int len)

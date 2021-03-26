@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 19:10:10 by ttorbeyn          #+#    #+#             */
+/*   Updated: 2021/03/26 19:10:13 by ttorbeyn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	reset_flags(t_flags *flags)
@@ -8,6 +20,7 @@ void	reset_flags(t_flags *flags)
 	flags->precision = 0;
 	flags->width = 0;
 	flags->big_x = 0;
+	flags->unsign = 0;
 }
 
 int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
@@ -89,9 +102,12 @@ int		ft_check_specifiers(int i, const char *str, t_flags *flags, va_list v_list)
 	else if (str[i] == 'd' || str[i] == 'i')
 		ft_printf_d(ft_itoa(va_arg(v_list, int)), flags);
 	else if (str[i] == 'u')
+	{
 		ft_printf_d(ft_uitoa(va_arg(v_list, int)), flags);
+		flags->unsign = 1;
+	}
 	else if (str[i] == 'p')
-		ft_printf_p(va_arg(v_list, unsigned int), flags);
+		ft_printf_p(va_arg(v_list, unsigned long), flags);
 	else if (str[i] == 'x')
 		ft_printf_x(va_arg(v_list, unsigned int), flags);
 	else if (str[i] == 'X')

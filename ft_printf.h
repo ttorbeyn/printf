@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 19:10:22 by ttorbeyn          #+#    #+#             */
+/*   Updated: 2021/03/26 19:10:24 by ttorbeyn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef PRINTF_FT_PRINTF_H
 # define PRINTF_FT_PRINTF_H
 
@@ -15,6 +27,7 @@ typedef struct	s_flags
 	int point;
 	int count;
 	int big_x;
+	int unsign;
 }				t_flags;
 
 int		ft_printf(const char *str, ...);
@@ -31,7 +44,7 @@ int		ft_atoi(const char *str);
 void	ft_printf_c(char c, t_flags *flags);
 void	ft_printf_s(char *str, t_flags *flags);
 void	ft_printf_d(char *str, t_flags *flags);
-void	ft_printf_p(unsigned int nbr, t_flags *flags);
+void	ft_printf_p(unsigned long nbr, t_flags *flags);
 void	ft_printf_x(unsigned int nbr, t_flags *flags);
 
 #endif //PRINTF_FT_PRINTF_H

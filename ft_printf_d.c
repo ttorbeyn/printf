@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_d.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/03/26 19:10:43 by ttorbeyn          #+#    #+#             */
+/*   Updated: 2021/03/26 19:10:48 by ttorbeyn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
@@ -7,6 +19,8 @@ void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
 
 	i = 0;
 	count = 0;
+	printf("%ld\n", nbr);
+	printf("%lu\n", nbr);
 	if (nbr < 0)
 		flags->precision++;
 	if (flags->point)
@@ -61,7 +75,9 @@ void	ft_printf_d(char *str, t_flags *flags)
 	long	nbr;
 	int		len;
 
-	nbr = ft_atoi(str);
+	if (!flags->unsign)
+		nbr = ft_atoi(str);
+	else ()
 	len = ft_strlen(str);
 	if (!flags->minus)
 		ft_printf_d_no_minus(str, flags, nbr, len);
