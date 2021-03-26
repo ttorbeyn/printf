@@ -6,6 +6,8 @@ int main(void)
 	char *str = "abcdef";
 	printf("string	: abcdef\n");
 	printf(".3s	: |%.3s|\n", str);
+	printf("4.3s	: |%4.3s|\n", str);
+	printf("04.3s	: |%04.3s|\n", str);
 	printf(".30s	: |%.30s|\n", str);
 	printf("3s	: |%3s|\n", str);
 	printf("30s	: |%30s|\n", str);
@@ -18,8 +20,10 @@ int main(void)
 	printf("-3s	: |%-3s|\n", str);
 	printf("-30s	: |%-30s|\n", str);
 	printf("-.3s	: |%-.3s|\n", str);
+	printf("-10.30s	: |%-10.30s|\n", str);
 	printf("-.30s	: |%-.30s|\n", str);
 	printf("\n");
+
 	int a = -12345;
 	int b = 0;
 	int c = -12;
@@ -51,7 +55,9 @@ int main(void)
 	printf("4d	: |%4d|\n", c);
 	printf("0*d	: |%0*d|\n", 4, c);
 	printf("030.10d	: |%030.10d|\n", a);
-	*/
+
 	int a = 0;
-	printf("%-1.0d\n", a)
+	printf("%-1.0d\n", a)*/
+
+	printf("good1: |%-*x|\n", 12, -209590960);
 }

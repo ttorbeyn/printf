@@ -14,6 +14,7 @@ typedef struct	s_flags
 	int width;
 	int point;
 	int count;
+	int big_x;
 }				t_flags;
 
 int		ft_printf(const char *str, ...);
@@ -30,8 +31,7 @@ int		ft_atoi(const char *str);
 void	ft_printf_c(char c, t_flags *flags);
 void	ft_printf_s(char *str, t_flags *flags);
 void	ft_printf_d(char *str, t_flags *flags);
-void	ft_printf_p(unsigned long nbr, t_flags *flags);
-void	ft_printf_x(unsigned long nbr, t_flags *flags);
-void	ft_printf_xx(unsigned long nbr, t_flags *flags);
+void	ft_printf_p(unsigned int nbr, t_flags *flags);
+void	ft_printf_x(unsigned int nbr, t_flags *flags);
 
 #endif //PRINTF_FT_PRINTF_H

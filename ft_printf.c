@@ -7,6 +7,7 @@ void	reset_flags(t_flags *flags)
 	flags->point = 0;
 	flags->precision = 0;
 	flags->width = 0;
+	flags->big_x = 0;
 }
 
 int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
@@ -90,11 +91,14 @@ int		ft_check_specifiers(int i, const char *str, t_flags *flags, va_list v_list)
 	else if (str[i] == 'u')
 		ft_printf_d(ft_uitoa(va_arg(v_list, int)), flags);
 	else if (str[i] == 'p')
-		ft_printf_p(va_arg(v_list, unsigned long), flags);
+		ft_printf_p(va_arg(v_list, unsigned int), flags);
 	else if (str[i] == 'x')
-		ft_printf_x(va_arg(v_list, unsigned long), flags);
+		ft_printf_x(va_arg(v_list, unsigned int), flags);
 	else if (str[i] == 'X')
-		ft_printf_xx(va_arg(v_list, unsigned long), flags);
+	{
+		flags->big_x = 1;
+		ft_printf_x(va_arg(v_list, unsigned int), flags);
+	}
 	else if (str[i] == '%')
 		ft_printf_c('%', flags);
 	return (i);
@@ -104,26 +108,28 @@ int		ft_printf(const char *str, ...)
 {
 	int	i;
 	va_list	v_list;
-	t_flags	*flags;
+	t_flags	flags;
 
 	i = 0;
+	//*flags = NULL;
 	va_start(v_list, str);
-	flags = malloc(sizeof(t_flags));
-	flags->count = 0;
+	//flags = malloc(sizeof(t_flags));
+	flags.count = 0;
 	while (str[i])
 	{
 		if (str[i] == '%')
 		{
 			i++;
-			reset_flags(flags);
-			i = (ft_check_flags(i, str, flags, v_list));
-			i = (ft_check_specifiers(i, str, flags, v_list));
+			reset_flags(&flags);
+			i = (ft_check_flags(i, str, &flags, v_list));
+			i = (ft_check_specifiers(i, str, &flags, v_list));
 		}
 		else
-			ft_putchar(str[i], flags);
+			ft_putchar(str[i], &flags);
 		i++;
 	}
 	va_end(v_list);
-	return (flags->count);
+	//free(flags);
+	return (flags.count);
 }
 

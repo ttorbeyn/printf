@@ -1,9 +1,9 @@
 #include "ft_printf.h"
 
-void	ft_printf_d_no_minus(char *str, t_flags *flags, int nbr, int len)
+void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
 {
 	int	i;
-	int count;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -28,10 +28,10 @@ void	ft_printf_d_no_minus(char *str, t_flags *flags, int nbr, int len)
 		ft_putstr(&str[i], flags);
 }
 
-void	ft_printf_d_minus(char *str, t_flags *flags, int nbr, int len)
+void	ft_printf_d_minus(char *str, t_flags *flags, long nbr, int len)
 {
 	int	i;
-	int count;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -58,8 +58,8 @@ void	ft_printf_d_minus(char *str, t_flags *flags, int nbr, int len)
 
 void	ft_printf_d(char *str, t_flags *flags)
 {
-	int nbr;
-	int len;
+	long	nbr;
+	int		len;
 
 	nbr = ft_atoi(str);
 	len = ft_strlen(str);
@@ -67,4 +67,6 @@ void	ft_printf_d(char *str, t_flags *flags)
 		ft_printf_d_no_minus(str, flags, nbr, len);
 	else if (flags->minus)
 		ft_printf_d_minus(str, flags, nbr, len);
+	free(str);
+	str = NULL;
 }
