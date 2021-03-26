@@ -19,8 +19,8 @@ void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
 
 	i = 0;
 	count = 0;
-	printf("%ld\n", nbr);
-	printf("%lu\n", nbr);
+	//printf("%ld\n", nbr);
+	//printf("%lu\n", nbr);
 	if (nbr < 0)
 		flags->precision++;
 	if (flags->point)
@@ -75,9 +75,9 @@ void	ft_printf_d(char *str, t_flags *flags)
 	long	nbr;
 	int		len;
 
-	if (!flags->unsign)
+	//if (!flags->unsign)
 		nbr = ft_atoi(str);
-	else ()
+	//else ()
 	len = ft_strlen(str);
 	if (!flags->minus)
 		ft_printf_d_no_minus(str, flags, nbr, len);
