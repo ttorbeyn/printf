@@ -79,10 +79,19 @@ int x;
 	ft_printf("4d	: |%4d|\n", c);
 	ft_printf("0*d	: |%0*d|\n", 4, c);
 	ft_printf("030.10d	: |%030.10d|\n", a);*/
-	int a = 0;
-	printf("good:-1.0d\t: |%-1.0d|\n", a);
-	ft_printf("baad:-1.0d\t: |%-1.0d|\n", a);
-
+	int a = 93;
+	printf("good:05.*d\t: |%05.*d|\n", 1, a);
+	ft_printf("baad:05.*d\t: |%05.*d|\n", 1, a);
+	printf("good:0*d\t: |%0*d|\n", 5, a);
+	ft_printf("baad:0*d\t: |%0*d|\n", 5, a);
+	printf("030.10d	: |%030.10d|\n", a);
+	ft_printf("030.10d	: |%030.10d|\n", a);
+	/*printf("good:02d\t: |%02d|\n", a);
+	ft_printf("baad:02d\t: |%02d|\n", a);
+	printf("good:02d\t: |%0*d|\n", 2, a);
+	ft_printf("baad:02d\t: |%0*d|\n", 2, a);
+	printf("good:.1d\t: |%.*d|\n", 1, a);
+	ft_printf("baad:.1d\t: |%.*d|\n", 1, a);*/
 }
 
 /*

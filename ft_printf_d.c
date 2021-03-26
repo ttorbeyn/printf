@@ -1,4 +1,5 @@
 #include "ft_printf.h"
+
 /*
 void	ft_printf_d(char *str, t_flags *flags)
 {
@@ -76,6 +77,8 @@ void	ft_printf_d_no_minus(char *str, t_flags *flags, int nbr, int len)
 	count = 0;
 	if (nbr < 0)
 		flags->precision++;
+	if (flags->point)
+		flags->zero = 0;
 	while (flags->point && flags->precision > len)
 	{
 		count++;
@@ -87,6 +90,8 @@ void	ft_printf_d_no_minus(char *str, t_flags *flags, int nbr, int len)
 		count++;
 		flags->width--;
 	}
+	if (!flags->precision && flags->point && !nbr)
+		flags->width++;
 	while (!flags->zero && flags->width > (count + len))
 	{
 		ft_putchar(' ', flags);
@@ -123,8 +128,14 @@ void	ft_printf_d_minus(char *str, t_flags *flags, int nbr, int len)
 		count++;
 		flags->precision--;
 	}
+	//printf("nbr : %d\n", nbr);
 	if (!(!flags->precision && flags->point && !nbr))
 		ft_putstr(&str[i], flags);
+	if (!flags->precision && flags->point && !nbr)
+		flags->width++;
+	//printf("count : %d\n", count);
+	//printf("len : %d\n", len);
+	//printf("width : %d\n", flags->width);
 	while (flags->width > (count + len))
 	{
 		ft_putchar(' ', flags);

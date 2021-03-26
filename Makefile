@@ -6,7 +6,7 @@
 #    By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 11:56:18 by ttorbeyn          #+#    #+#              #
-#    Updated: 2021/03/22 23:21:14 by hubert           ###   ########.fr        #
+#    Updated: 2021/03/25 23:21:30 by hubert           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,4 +46,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: all, clean, fclean, re, bonus
