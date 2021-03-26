@@ -34,7 +34,6 @@ int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
 		{
 			flags->point = 1;
 			i++;
-			//printf("atoi : %d\n", ft_atoi(&str[i]));
 			if (ft_atoi(&str[i]) > 0)
 			{
 				flags->precision = ft_atoi(&str[i]);
