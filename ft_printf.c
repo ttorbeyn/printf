@@ -6,17 +6,26 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:10:10 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/27 01:47:46 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/27 02:43:07 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+void	reset_flags(t_flags *flags)
+{
+	flags->minus = 0;
+	flags->zero = 0;
+	flags->point = 0;
+	flags->prec = 0;
+	flags->width = 0;
+	flags->big_x = 0;
+	flags->unsign = 0;
+}
+
 int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
 {
-	while (str[i] != 'c' && str[i] != 's' && str[i] != 'd' && str[i] != 'u'
-					&& str[i] != 'i' && str[i] != 'p' && str[i] != 'x'
-						&& str[i] != 'X' && str[i] != '%')
+	while (!ft_is_specifier(str[i]))
 	{
 		if (str[i] == '-')
 		{
@@ -26,7 +35,10 @@ int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
 		if (str[i] == '0')
 			i = ft_check_zero(i, str, flags);
 		if (str[i] == '.')
+		{
+			flags->point = 1;
 			i = ft_check_prec(i, str, flags, v_list);
+		}
 		if (str[i] == '*')
 			i = ft_check_ast(i, flags, v_list);
 		if (ft_isdigit(str[i]))

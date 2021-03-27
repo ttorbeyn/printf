@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:12:16 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/26 19:12:18 by ttorbeyn         ###   ########.fr       */
+/*   Updated: 2021/03/27 02:20:29 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,51 +39,50 @@ static void	ft_print_hexa(unsigned int nbr, t_flags *flags)
 	ft_putchar(base[nbr % 16], flags);
 }
 
-void	ft_printf_x_no_minus(unsigned int nbr, t_flags *flags, int len)
+static void	ft_printf_x_no_minus(unsigned int nbr, t_flags *flags, int len)
 {
 	int	count;
 
 	count = 0;
 	if (flags->point)
 		flags->zero = 0;
-	flags->precision++;
-	while (flags->point && --flags->precision > len)
+	flags->prec++;
+	while (flags->point && --flags->prec > len)
 		count++;
 	while (flags->zero && flags->width-- > len)
 		count++;
-	if (!flags->precision && flags->point && !nbr)
+	if (!flags->prec && flags->point && !nbr)
 		flags->width++;
 	while (!flags->zero && flags->width-- > (count + len))
 		ft_putchar(' ', flags);
 	while (count--)
 		ft_putchar('0', flags);
-	if (!(!flags->precision && flags->point && !nbr))
+	if (!(!flags->prec && flags->point && !nbr))
 		ft_print_hexa(nbr, flags);
 }
 
-void	ft_printf_x_minus(unsigned int nbr, t_flags *flags, int len)
+static void	ft_printf_x_minus(unsigned int nbr, t_flags *flags, int len)
 {
 	int	count;
 
 	count = 0;
-	if (flags->point && nbr == 0 && flags->precision == 0 && !flags->width)
+	if (flags->point && nbr == 0 && flags->prec == 0 && !flags->width)
 		return ;
-	while (flags->point && flags->precision > len)
+	while (flags->point && flags->prec > len)
 	{
 		ft_putchar('0', flags);
 		count++;
-		flags->precision--;
+		flags->prec--;
 	}
-	if (!(!flags->precision && flags->point && !nbr))
+	if (!(!flags->prec && flags->point && !nbr))
 		ft_print_hexa(nbr, flags);
-	if (!flags->precision && flags->point && !nbr)
+	if (!flags->prec && flags->point && !nbr)
 		flags->width++;
 	while (flags->width-- > (count + len))
 		ft_putchar(' ', flags);
 }
 
-
-void	ft_printf_x(unsigned int nbr, t_flags *flags)
+void		ft_printf_x(unsigned int nbr, t_flags *flags)
 {
 	int	len;
 
@@ -93,30 +92,3 @@ void	ft_printf_x(unsigned int nbr, t_flags *flags)
 	else
 		ft_printf_x_no_minus(nbr, flags, len);
 }
-
-/*
-	while (flags->precision > len)
-	{
-		ft_putchar('0', flags);
-		flags->precision--;
-	}
-	if (flags->width)
-	{
-		if (flags->minus)
-		{
-
-			ft_print_address(nbr, flags);
-		}
-		while (flags->width > count_hexa_len(nbr))
-		{
-			if (flags->zero)
-				ft_putchar('0', flags);
-			else
-				ft_putchar(' ', flags);
-			flags->width--;
-		}
-	}
-	if (flags->minus == 0)
-		ft_print_address(nbr, flags);
-	return ;
-*/
