@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:10:43 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/26 19:10:48 by ttorbeyn         ###   ########.fr       */
+/*   Updated: 2021/03/27 01:11:29 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
 
 	i = 0;
 	count = 0;
-	//printf("%ld\n", nbr);
-	//printf("%lu\n", nbr);
-	if (nbr < 0)
+	if (nbr < 0 && !flags->unsign)
 		flags->precision++;
 	if (flags->point)
 		flags->zero = 0;
@@ -34,7 +32,7 @@ void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
 		flags->width++;
 	while (!flags->zero && flags->width-- > (count + len))
 		ft_putchar(' ', flags);
-	if (nbr < 0)
+	if (nbr < 0 && !flags->unsign)
 		ft_putchar(str[i++], flags);
 	while (count--)
 		ft_putchar('0', flags);
@@ -49,7 +47,7 @@ void	ft_printf_d_minus(char *str, t_flags *flags, long nbr, int len)
 
 	i = 0;
 	count = 0;
-	if (nbr < 0)
+	if (nbr < 0 && !flags->unsign)
 	{
 		ft_putchar(str[i++], flags);
 		flags->precision++;
@@ -75,9 +73,7 @@ void	ft_printf_d(char *str, t_flags *flags)
 	long	nbr;
 	int		len;
 
-	//if (!flags->unsign)
-		nbr = ft_atoi(str);
-	//else ()
+	nbr = ft_atoi(str);
 	len = ft_strlen(str);
 	if (!flags->minus)
 		ft_printf_d_no_minus(str, flags, nbr, len);

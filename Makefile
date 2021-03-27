@@ -6,7 +6,7 @@
 #    By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/19 11:56:18 by ttorbeyn          #+#    #+#              #
-#    Updated: 2021/03/25 23:21:30 by hubert           ###   ########.fr        #
+#    Updated: 2021/03/27 00:30:59 by hubert           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS    	= 	ft_printf.c\
 				ft_printf_s.c\
 				ft_printf_x.c\
 				ft_printf_utils.c\
+				ft_printf_flags.c\
 				utils/ft_atoi.c\
 				utils/ft_itoa.c\
 				utils/ft_uitoa.c

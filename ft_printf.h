@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:10:22 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/26 19:10:24 by ttorbeyn         ###   ########.fr       */
+/*   Updated: 2021/03/27 01:13:20 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,15 @@ void	ft_putchar(char c, t_flags *flags);
 void	ft_putstr(char *s, t_flags *flags);
 int 	ft_strlen(const char *s);
 int		ft_isdigit(int c);
+void	reset_flags(t_flags *flags);
 
 char	*ft_uitoa(unsigned int n);
 char	*ft_itoa(int n);
 int		ft_atoi(const char *str);
+
+int		ft_check_prec(int i, const char *str, t_flags *flags, va_list v_list);
+int		ft_check_zero(int i, const char *str, t_flags *flags);
+int		ft_check_ast(int i, t_flags *flags, va_list v_list);
 
 void	ft_printf_c(char c, t_flags *flags);
 void	ft_printf_s(char *str, t_flags *flags);

@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:12:31 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/26 19:12:33 by ttorbeyn         ###   ########.fr       */
+/*   Updated: 2021/03/27 01:05:18 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,35 @@
 
 int main(void)
 {
-	printf("|%*.*u|\n", 42, 25, -12);
-	ft_printf("|%*.*u|\n", 42, 25, -12);
+	printf("good: --0*|%-0*.20u|*0 0*|%-0*.10u|*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
+	printf("good: |%-9.10u|\n", UINT_MAX);
+	printf("good: |%-10.10u|\n", UINT_MAX);
+	printf("good: |%-11.10u|\n", UINT_MAX);
+	ft_printf("baad: --0*|%-0*.20u|*0 0*|%-0*.10u|*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
+	ft_printf("baad: |%-9.10u|\n", UINT_MAX);
+	ft_printf("baad: |%-10.10u|\n", UINT_MAX);
+	ft_printf("baad: |%-11.10u|\n", UINT_MAX);
+}
 
-	//int a = 8;
-	//int b = 0;
-	//int c = -12;
-	//ft_printf("baad : X	: |%X|\n", c);
-	//printf("good : X	: |%X|\n", c);
+
+/*
+char c = '0';
+printf("good : c	: |%c|\n", c);
+printf("good : 10c	: |%10c|\n", c);
+printf("good : -10c	: |%-010c|\n", c);
+printf("good : 010c	: |%010c|\n", c);
+printf("good : -10c	: |%-10c|\n", c);
+printf("good : .10c	: |%.10c|\n", c);
+printf("good : .0c	: |%.0c|\n", c);
+printf("good : 10.10c	: |%10.10c|\n", c);
+printf("good : -10.10c	: |%-10.10c|\n", c);*/
+//ft_printf("baad : 1.c	: |%1.c|\n", c);
+
+//int a = 8;
+//int b = 0;
+//int c = -12;
+//ft_printf("baad : X	: |%X|\n", c);
+//printf("good : X	: |%X|\n", c);
 /*	int		a = -4;
 	int		b = 0;
 	char	c = 'a';
@@ -47,23 +68,21 @@ int main(void)
 	char	*u = "-0";
 	a = 12;
 	b = g;*/
-	//printf("%-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
-	//printf("%*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X", a, b, i, a, b, i, a, b, i, a, b, j, a, b, j, a, b, j, a, b, k, a, b, k, a, b, k, a, b, l, a, b, l, a, b, l, a, b, m, a, b, m, a, b, m, a, b, c, a, b, c, a, b, c, a, b, d, a, b, d, a, b, d, a, b, e, a, b, e, a, b, e);
-	//printf("good: %-*p, %-*x, %-*p, %-*x, %-*p, %-*x, %-*p, %-*x\n", a, (void *)209590960, a, 209590960, a, (void *)207038912, a, 207038912, a, (void *)1, a, 1, a, NULL, a, 0);
+//printf("%-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s, %-*.*s", a, b, n, a, b, o, a, b, p, a, b, q, a, b, r, a, b, s, a, b, t, a, b, u);
+//printf("%*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X, %*.*u, %*.*x, %*.*X", a, b, i, a, b, i, a, b, i, a, b, j, a, b, j, a, b, j, a, b, k, a, b, k, a, b, k, a, b, l, a, b, l, a, b, l, a, b, m, a, b, m, a, b, m, a, b, c, a, b, c, a, b, c, a, b, d, a, b, d, a, b, d, a, b, e, a, b, e, a, b, e);
+//printf("good: %-*p, %-*x, %-*p, %-*x, %-*p, %-*x, %-*p, %-*x\n", a, (void *)209590960, a, 209590960, a, (void *)207038912, a, 207038912, a, (void *)1, a, 1, a, NULL, a, 0);
 //	ft_printf("baad: %-*p, %-*x, %-*p, %-*x, %-*p, %-*x, %-*p, %-*x\n", a, (void *)209590960, a, 209590960, a, (void *)207038912, a, 207038912, a, (void *)1, a, 1, a, NULL, a, 0);
 
-	//printf("good: |*%-*.*x*| |*%*.*x*| \n", 4, 5, 10, 10, 21, -10);
+//printf("good: |*%-*.*x*| |*%*.*x*| \n", 4, 5, 10, 10, 21, -10);
 //printf(" *%-*.*x* *%*.*x* ", 6, 2, 102, 10, 21, -101);
 //	printf(" *%*.*x* *%*.*x* ", -6, 2, 102, 10, 21, 101);
 //	printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 6, 2, 102, 10, 21, -101);
 //	printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 2, 6, 102, 21, 10, -101);
-	//ft_printf("baad: |*%-*.*x*| |*%*.*x*| \n", 4, 5, 10, 10, 21, -10);
+//ft_printf("baad: |*%-*.*x*| |*%*.*x*| \n", 4, 5, 10, 10, 21, -10);
 //ft_printf(" *%-*.*x* *%*.*x* ", 6, 2, 102, 10, 21, -101);
 //	ft_printf(" *%*.*x* *%*.*x* ", -6, 2, 102, 10, 21, 101);
 //	ft_printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 6, 2, 102, 10, 21, -101);
 //	ft_printf(" 0*%0-*.*x*0 0*%0*.*x*0 ", 2, 6, 102, 21, 10, -101);
-}
-
 /*
 char *str = "0";
 int a = -2;
