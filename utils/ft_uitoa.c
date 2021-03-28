@@ -46,38 +46,21 @@ static int	ft_countdigit(unsigned int x)
 	return (c);
 }
 
-static int	ft_isnegative(unsigned int n)
-{
-	unsigned int sign;
-
-	sign = 1;
-	if (n < 0)
-		sign = -1;
-	return (sign);
-}
-
 char		*ft_uitoa(unsigned int n)
 {
 	char			*new;
 	unsigned int	i;
 	unsigned int	c;
-	unsigned int	n2;
 
 	c = ft_countdigit(n);
-	if (n < 0)
-		(n2 = -n);
-	else
-		(n2 = n);
-	if (!(new = malloc((sizeof(char) * (c + (n < 0 ? 2 : 1))))))
+	if (!(new = malloc(sizeof(char) * (c + 1))))
 		return (NULL);
 	i = 0;
 	while (i < c)
 	{
-		new[i++] = (n2 % 10) + '0';
-		n2 = n2 / 10;
+		new[i++] = (n % 10) + '0';
+		n = n / 10;
 	}
-	if (ft_isnegative(n) == -1)
-		new[i++] = '-';
 	new[i] = '\0';
 	return (ft_revstr(new));
 }
