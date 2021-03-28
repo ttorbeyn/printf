@@ -15,7 +15,10 @@
 void	ft_printf_c(char c, t_flags *flags)
 {
 	if (flags->minus)
+	{
+		flags->zero = 0;
 		ft_putchar(c, flags);
+	}
 	while (flags->width > 1)
 	{
 		if (flags->zero)

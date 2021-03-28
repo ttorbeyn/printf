@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:12:31 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/27 01:05:18 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/28 17:27:34 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,20 @@
 
 int main(void)
 {
-	printf("good: --0*|%-0*.20u|*0 0*|%-0*.10u|*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
-	printf("good: |%-9.10u|\n", UINT_MAX);
-	printf("good: |%-10.10u|\n", UINT_MAX);
-	printf("good: |%-11.10u|\n", UINT_MAX);
-	ft_printf("baad: --0*|%-0*.20u|*0 0*|%-0*.10u|*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
-	ft_printf("baad: |%-9.10u|\n", UINT_MAX);
-	ft_printf("baad: |%-10.10u|\n", UINT_MAX);
-	ft_printf("baad: |%-11.10u|\n", UINT_MAX);
+	printf("|%.5p|\n", 0);
+	ft_printf("|%.5p|\n", 0);
 }
 
 
 /*
+printf("good: --0*|%-0*.20u|*0 0*|%-0*.10u|*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
+printf("good: |%-9.10u|\n", UINT_MAX);
+printf("good: |%-10.10u|\n", UINT_MAX);
+printf("good: |%-11.10u|\n", UINT_MAX);
+ft_printf("baad: --0*|%-0*.20u|*0 0*|%-0*.10u|*0-- \n", -21, CHAR_MAX, 21, CHAR_MIN);
+ft_printf("baad: |%-9.10u|\n", UINT_MAX);
+ft_printf("baad: |%-10.10u|\n", UINT_MAX);
+ft_printf("baad: |%-11.10u|\n", UINT_MAX);
 char c = '0';
 printf("good : c	: |%c|\n", c);
 printf("good : 10c	: |%10c|\n", c);

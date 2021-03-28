@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:11:22 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/27 02:07:58 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/28 17:28:18 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,9 @@ static void	ft_printf_p_no_minus(unsigned long nbr, t_flags *flags, int len)
 		ft_putchar(' ', flags);
 	while (count--)
 		ft_putchar('0', flags);
+	ft_putstr("0x", flags);
 	if (!(!flags->prec && flags->point && !nbr))
-	{
-		ft_putstr("0x", flags);
 		ft_print_hexa(nbr, flags);
-	}
 }
 
 static void	ft_printf_p_minus(unsigned long nbr, t_flags *flags, int len)
@@ -76,11 +74,9 @@ static void	ft_printf_p_minus(unsigned long nbr, t_flags *flags, int len)
 		count++;
 		flags->prec--;
 	}
+	ft_putstr("0x", flags);
 	if (!(!flags->prec && flags->point && !nbr))
-	{
-		ft_putstr("0x", flags);
 		ft_print_hexa(nbr, flags);
-	}
 	if (!flags->prec && flags->point && !nbr)
 		flags->width++;
 	while (flags->width-- > (count + len))
