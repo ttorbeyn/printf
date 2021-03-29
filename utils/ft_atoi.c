@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:08:15 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/26 23:54:29 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/29 12:13:58 by ttorbeyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static	int	ft_isspace(const char *str)
 
 	i = 0;
 	while (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-		   || str[i] == '\f' || str[i] == '\r')
+			|| str[i] == '\f' || str[i] == '\r')
 		i++;
 	return (i);
 }
