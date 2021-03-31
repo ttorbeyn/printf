@@ -6,18 +6,24 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:12:31 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/28 17:27:34 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/29 17:59:51 by ttorbeyn         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 #include <stdio.h>
 #include <limits.h>
 
 int main(void)
 {
-	printf("|%.5p|\n", 0);
-	ft_printf("|%.5p|\n", 0);
+	printf("|%.5p|\n", NULL);
+	printf("|%.p|\n", NULL);
+	printf("|%p|\n", NULL);
+	printf("|%s|\n", NULL);
+	printf("|%.5s|\n", NULL);
+	printf("|%5s|\n", NULL);
+	printf("|%s|\n", NULL);
+	printf("|%d|\n", NULL);
 }
 
 
