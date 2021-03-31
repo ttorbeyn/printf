@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-int		ft_check_prec(int i, const char *str, t_flags *flags, va_list v_list)
+int	ft_check_prec(int i, const char *str, t_flags *flags, va_list v_list)
 {
 	if (ft_atoi(&str[++i]) > 0)
 	{
@@ -41,7 +41,7 @@ int		ft_check_prec(int i, const char *str, t_flags *flags, va_list v_list)
 	return (i);
 }
 
-int		ft_check_zero(int i, const char *str, t_flags *flags)
+int	ft_check_zero(int i, const char *str, t_flags *flags)
 {
 	flags->zero = 1;
 	i++;
@@ -54,7 +54,7 @@ int		ft_check_zero(int i, const char *str, t_flags *flags)
 	return (i);
 }
 
-int		ft_check_ast(int i, t_flags *flags, va_list v_list)
+int	ft_check_ast(int i, t_flags *flags, va_list v_list)
 {
 	flags->width = va_arg(v_list, int);
 	if (flags->width < 0)

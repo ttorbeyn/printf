@@ -23,7 +23,7 @@ void	reset_flags(t_flags *flags)
 	flags->unsign = 0;
 }
 
-int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
+int	ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
 {
 	while (!ft_is_specifier(str[i]))
 	{
@@ -51,7 +51,7 @@ int		ft_check_flags(int i, const char *str, t_flags *flags, va_list v_list)
 	return (i);
 }
 
-int		ft_check_spec(int i, const char *str, t_flags *flags, va_list v_list)
+int	ft_check_spec(int i, const char *str, t_flags *flags, va_list v_list)
 {
 	if (str[i] == 'c')
 		ft_printf_c(va_arg(v_list, int), flags);
@@ -78,7 +78,7 @@ int		ft_check_spec(int i, const char *str, t_flags *flags, va_list v_list)
 	return (i);
 }
 
-int		ft_printf(const char *str, ...)
+int	ft_printf(const char *str, ...)
 {
 	int		i;
 	va_list	v_list;

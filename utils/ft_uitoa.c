@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:09:45 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/26 23:54:29 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/31 18:36:50 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,15 @@ static int	ft_countdigit(unsigned int x)
 	return (c);
 }
 
-char		*ft_uitoa(unsigned int n)
+char	*ft_uitoa(unsigned int n)
 {
 	char			*new;
 	unsigned int	i;
 	unsigned int	c;
 
 	c = ft_countdigit(n);
-	if (!(new = malloc(sizeof(char) * (c + 1))))
+	new = malloc(sizeof(char) * (c + 1));
+	if (!new)
 		return (NULL);
 	i = 0;
 	while (i < c)

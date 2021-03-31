@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:08:35 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/26 23:54:29 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/31 18:45:12 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static int	ft_countdigit(int x)
 
 static int	ft_isnegative(int n)
 {
-	int sign;
+	int	sign;
 
 	sign = 1;
 	if (n < 0)
@@ -56,19 +56,21 @@ static int	ft_isnegative(int n)
 	return (sign);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	char			*new;
 	int				i;
 	int				c;
 	unsigned int	n2;
 
+	i = 1;
 	c = ft_countdigit(n);
-	if (n < 0)
+	if (n < 0 && i++)
 		(n2 = -n);
 	else
 		(n2 = n);
-	if (!(new = malloc((sizeof(char) * (c + (n < 0 ? 2 : 1))))))
+	new = malloc(sizeof(char) * (c + i));
+	if (!new)
 		return (NULL);
 	i = 0;
 	while (i < c)

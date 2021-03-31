@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:11:33 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/27 02:16:29 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/31 18:34:33 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	ft_printf_s_minus(char *str, t_flags *flags, int len)
 {
 	int	i;
-	int count;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -27,7 +27,7 @@ void	ft_printf_s_minus(char *str, t_flags *flags, int len)
 		len--;
 	}
 	while ((flags->point && flags->width > count)
-			|| (!flags->point && flags->width > count))
+		|| (!flags->point && flags->width > count))
 	{
 		ft_putchar(' ', flags);
 		flags->width--;
@@ -36,8 +36,8 @@ void	ft_printf_s_minus(char *str, t_flags *flags, int len)
 
 void	ft_printf_s_no_minus(char *str, t_flags *flags, int len)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -64,7 +64,7 @@ void	ft_printf_s_no_minus(char *str, t_flags *flags, int len)
 
 void	ft_printf_s(char *str, t_flags *flags)
 {
-	int len;
+	int	len;
 
 	if (str == NULL)
 		str = "(null)";

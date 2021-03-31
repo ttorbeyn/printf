@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:11:22 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/28 17:28:18 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/31 18:33:49 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	count_hexa_len(unsigned long nbr)
 
 static void	ft_print_hexa(unsigned long nbr, t_flags *flags)
 {
-	char *base;
+	char	*base;
 
 	base = "0123456789abcdef";
 	if (nbr > 15)
@@ -83,7 +83,7 @@ static void	ft_printf_p_minus(unsigned long nbr, t_flags *flags, int len)
 		ft_putchar(' ', flags);
 }
 
-void		ft_printf_p(unsigned long nbr, t_flags *flags)
+void	ft_printf_p(unsigned long nbr, t_flags *flags)
 {
 	int	len;
 

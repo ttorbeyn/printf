@@ -6,7 +6,7 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:11:56 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/27 02:43:51 by hubert           ###   ########.fr       */
+/*   Updated: 2021/03/31 18:35:20 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_putstr(char *s, t_flags *flags)
 	}
 }
 
-int		ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 
@@ -42,15 +42,15 @@ int		ft_strlen(const char *s)
 	return (i);
 }
 
-int		ft_isdigit(int c)
+int	ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9');
 }
 
-int		ft_is_specifier(char c)
+int	ft_is_specifier(char c)
 {
 	if (c == 'c' || c == 's' || c == 'd' || c == 'u' || c == 'i' || c == 'p'
-				|| c == 'x' || c == 'X' || c == '%')
+		|| c == 'x' || c == 'X' || c == '%')
 		return (1);
 	return (0);
 }

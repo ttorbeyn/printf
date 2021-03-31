@@ -28,7 +28,7 @@ static int	count_hexa_len(unsigned int nbr)
 
 static void	ft_print_hexa(unsigned int nbr, t_flags *flags)
 {
-	char *base;
+	char	*base;
 
 	if (flags->big_x)
 		base = "0123456789ABCDEF";
@@ -82,7 +82,7 @@ static void	ft_printf_x_minus(unsigned int nbr, t_flags *flags, int len)
 		ft_putchar(' ', flags);
 }
 
-void		ft_printf_x(unsigned int nbr, t_flags *flags)
+void	ft_printf_x(unsigned int nbr, t_flags *flags)
 {
 	int	len;
 
