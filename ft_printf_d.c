@@ -6,13 +6,13 @@
 /*   By: ttorbeyn <ttorbeyn@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/26 19:10:43 by ttorbeyn          #+#    #+#             */
-/*   Updated: 2021/03/27 02:05:32 by hubert           ###   ########.fr       */
+/*   Updated: 2021/04/06 10:27:12 by hubert           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
+static void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
 {
 	int	i;
 	int	count;
@@ -40,7 +40,7 @@ void	ft_printf_d_no_minus(char *str, t_flags *flags, long nbr, int len)
 		ft_putstr(&str[i], flags);
 }
 
-void	ft_printf_d_minus(char *str, t_flags *flags, long nbr, int len)
+static void	ft_printf_d_minus(char *str, t_flags *flags, long nbr, int len)
 {
 	int	i;
 	int	count;
@@ -73,6 +73,8 @@ void	ft_printf_d(char *str, t_flags *flags)
 	long	nbr;
 	int		len;
 
+	if (!str)
+		return ;
 	nbr = ft_atoi(str);
 	len = ft_strlen(str);
 	if (!flags->minus)

@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-void	ft_printf_s_minus(char *str, t_flags *flags, int len)
+static void	ft_printf_s_minus(char *str, t_flags *flags, int len)
 {
 	int	i;
 	int	count;
@@ -34,7 +34,7 @@ void	ft_printf_s_minus(char *str, t_flags *flags, int len)
 	}
 }
 
-void	ft_printf_s_no_minus(char *str, t_flags *flags, int len)
+static void	ft_printf_s_no_minus(char *str, t_flags *flags, int len)
 {
 	int	i;
 	int	count;
